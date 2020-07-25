@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dynamicgram</string>
+    <string name="title_feature_homefeed">homefeed</string>
+    <string name="homefeed">homefeed</string>
+    <string name="explore">explore</string>
+    <string name="title_feature_explore">explore</string>
+    <string name="title_feature_messages">messages</string>
+</resources>

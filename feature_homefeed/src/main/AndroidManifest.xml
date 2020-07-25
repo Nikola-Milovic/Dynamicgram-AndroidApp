@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nikolam.feature_homefeed">
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_feature_homefeed">
+        <dist:install-time />
+        <dist:fusing dist:include="true"/>
+    </dist:module>
+
+</manifest>
