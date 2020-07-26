@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/exploreFragment"
         android:name="com.nikolam.feature_explore.ExploreFragment"
-        app:moduleName="feature_explore"
+        app:moduleName="@string/title_feature_explore"
         android:label="explore_fragment"
         tools:layout="@layout/explore_fragment" >
         <action
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/homeFeed2"
         android:name="com.nikolam.feature_homefeed.ui.HomeFeedFragment"
-        app:moduleName="feature_homefeed"
+        app:moduleName="@string/title_feature_homefeed"
         android:label="home_feed_fragment"
         tools:layout="@layout/home_feed_fragment" />
 </navigation>

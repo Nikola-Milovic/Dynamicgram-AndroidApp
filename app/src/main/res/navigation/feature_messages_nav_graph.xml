@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/messagesFragment"
         android:name="com.nikolam.feature_messages.ui.MessagesFragment"
-        app:moduleName="feature_messages"
+        app:moduleName="@string/title_feature_messages"
         android:label="MessagesFragment" />
 </navigation>
