@@ -12,8 +12,6 @@ android {
         minSdkVersion(AndroidConfig.MIN_SDK_VERSION)
         targetSdkVersion(AndroidConfig.TARGET_SDK_VERSION)
 
-        versionCode = AndroidConfig.VERSION_CODE
-        versionName = AndroidConfig.VERSION_NAME
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
     }
 
@@ -21,7 +19,7 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles("proguard-android.txt", "proguard-rules.pro")
+            proguardFiles("proguard-android.txt", "proguard-rules.pro", "proguard-rules-dynamic-features.pro")
         }
     }
 

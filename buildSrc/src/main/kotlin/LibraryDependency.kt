@@ -2,13 +2,13 @@
 
 private object LibraryVersion {
     const val TIMBER = "4.7.1"
-    const val PLAY_CORE = "1.6.4"
+    const val PLAY_CORE = "1.7.3" //164
     const val APP_COMPACT = "1.1.0"
     const val RECYCLER_VIEW = "1.1.0"
     const val COORDINATOR_LAYOUT = "1.1.0"
 
     // 1.1.x version is required in order to support the dark theme functionality in
-    // Android Q (adds Theme.MaterialComponents.DayNight)
+    // Android Q(adds Theme.MaterialComponents.DayNight)
     const val MATERIAL = "1.1.0-alpha09"
     const val CONSTRAINT_LAYOUT = "1.1.3"
     const val CORE_KTX = "1.1.0"
