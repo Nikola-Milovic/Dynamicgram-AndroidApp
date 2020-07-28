@@ -55,3 +55,41 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
 }
+
+
+val bundletoolJar = project.rootDir.resolve("third_party/bundletool/bundletool-all-0.13.0.jar")
+
+android.applicationVariants.all(object : Action<com.android.build.gradle.api.ApplicationVariant> {
+    override fun execute(variant: com.android.build.gradle.api.ApplicationVariant) {
+        variant.outputs.forEach { output: com.android.build.gradle.api.BaseVariantOutput? ->
+            (output as? com.android.build.gradle.api.ApkVariantOutput)?.let { apkOutput: com.android.build.gradle.api.ApkVariantOutput ->
+                var filePath = apkOutput.outputFile.absolutePath
+                filePath = filePath.replaceAfterLast(".", "aab")
+                filePath = filePath.replace("build/outputs/apk/", "build/outputs/bundle/")
+                var outputPath = filePath.replace("build/outputs/bundle/", "build/outputs/apks/")
+                outputPath = outputPath.replaceAfterLast(".", "apks")
+
+                tasks.register<JavaExec>("buildApks${variant.name.capitalize()}") {
+                    classpath = files(bundletoolJar)
+                    args = listOf(
+                        "build-apks",
+                        "--overwrite",
+                        "--local-testing",
+                        "--bundle",
+                        filePath,
+                        "--output",
+                        outputPath
+                    )
+                    dependsOn("bundle${variant.name.capitalize()}")
+                }
+
+                tasks.register<JavaExec>("installApkSplitsForTest${variant.name.capitalize()}") {
+                    classpath = files(bundletoolJar)
+                    args = listOf("install-apks", "--apks", outputPath)
+                    dependsOn("buildApks${variant.name.capitalize()}")
+                }
+
+            }
+        }
+    }
+})
