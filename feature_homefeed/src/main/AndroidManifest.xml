@@ -4,12 +4,13 @@
     package="com.nikolam.feature_homefeed">
 
     <dist:module
-        dist:instant="true"
+        dist:instant="false"
         dist:title="@string/title_feature_homefeed">
         <dist:delivery>
-            <dist:install-time />
+            <dist:on-demand />
         </dist:delivery>
-        <dist:fusing dist:include="true"/>
+        <dist:fusing dist:include="true" />
     </dist:module>
 
+    <application />
 </manifest>

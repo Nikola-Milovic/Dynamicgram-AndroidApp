@@ -4,16 +4,6 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import androidx.lifecycle.Observer
-import androidx.navigation.dynamicfeatures.DynamicInstallMonitor
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.play.core.splitcompat.SplitCompat
-import com.google.android.play.core.splitinstall.SplitInstallManager
-import com.google.android.play.core.splitinstall.SplitInstallSessionState
-import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
-import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
@@ -32,17 +22,28 @@ class MainActivity : AppCompatActivity() {
 
         Timber.v("onCreate ${javaClass.simpleName}")
 
-        setupBottomNavigation()
+     //   setupBottomNavigation()
 
     }
-
-    override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(newBase)
-        SplitCompat.installActivity(this)
-    }
-
-    private fun setupBottomNavigation() {
-        val navController = navHostFragment.findNavController()
-        bottomNav.setupWithNavController(navController)
-    }
+//
+//    private fun setupBottomNavigation() {
+//        val navController = findNavController(R.id.nav_host_fragment)
+//            .setupWithNavController(navController)
+//    }
 }
+
+//    <com.google.android.material.bottomnavigation.BottomNavigationView
+//        android:id="@+id/bottomNav"
+//        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+//        android:layout_width="match_parent"
+//        android:layout_height="wrap_content"
+//        android:layout_gravity="bottom"
+//        android:background="@color/colorPrimary"
+//        app:labelVisibilityMode="labeled"
+//        app:layout_constraintBottom_toBottomOf="parent"
+//        app:layout_constraintHorizontal_bias="1.0"
+//        app:layout_constraintLeft_toLeftOf="parent"
+//        app:layout_constraintRight_toRightOf="parent"
+//        app:layout_constraintTop_toBottomOf="@id/nav_host_fragment"
+//        app:layout_constraintVertical_bias="1.0"
+//        app:menu="@menu/bottom_nav_menu" />

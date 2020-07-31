@@ -2,10 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/app_navigation_graph"
-    app:startDestination="@id/feature_homefeed_nav_graph">
+    app:startDestination="@id/homefeedGraph">
 
-    <include app:graph = "@navigation/feature_homefeed_nav_graph"/>
-    <include app:graph = "@navigation/feature_explore_nav_graph"/>
-    <include app:graph = "@navigation/feature_messages_nav_graph"/>
+
+    <include-dynamic
+        android:id="@+id/homefeedGraph"
+        app:graphPackage="com.nikolam.feature_homefeed"
+        app:graphResName="homefeed_nav_graph"
+        app:moduleName="@string/title_feature_homefeed" />
+
 
 </navigation>
