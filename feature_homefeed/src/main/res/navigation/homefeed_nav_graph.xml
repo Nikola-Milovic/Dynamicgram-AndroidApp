@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/homefeed_nav_graph"
-    app:moduleName="@string/title_feature_homefeed"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homefeed_nav_graph"
     app:startDestination="@id/homeFeedFragment">
 
     <fragment
         android:id="@+id/homeFeedFragment"
         android:name="com.nikolam.feature_homefeed.ui.HomeFeedFragment"
-        android:label="HomeFeedFragment" />
+        android:label="HomeFeedFragment" >
+        <action
+            android:id="@+id/action_homeFeedFragment_to_messagesFragment"
+            app:destination="@id/messagesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.nikolam.feature_messages.ui.MessagesFragment"
+        android:label="fragment_messages"
+        app:moduleName="messages"/>
+
 </navigation>

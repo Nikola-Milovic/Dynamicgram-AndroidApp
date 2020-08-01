@@ -2,8 +2,10 @@ import com.android.build.gradle.internal.dsl.BaseFlavor
 import com.android.build.gradle.internal.dsl.DefaultConfig
 
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    id(GradlePluginId.ANDROID_APPLICATION)
+    id(GradlePluginId.KOTLIN_ANDROID)
+    id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
+    id(GradlePluginId.SAFE_ARGS)
 }
 
 android {
@@ -26,7 +28,7 @@ android {
             proguardFiles("proguard-android.txt", "proguard-rules.pro")
         }
     }
-    dynamicFeatures = mutableSetOf(":feature_homefeed", ":feature_explore", ":feature_messages")
+    dynamicFeatures = mutableSetOf(":feature_explore", ":feature_messages")
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -52,6 +54,8 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+
+    implementation(project(":feature_homefeed"))
 }
 
 
