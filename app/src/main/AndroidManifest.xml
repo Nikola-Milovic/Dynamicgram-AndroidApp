@@ -3,6 +3,8 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.nikolam.dynamicgram">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".DynamicgramApplication"
         android:allowBackup="false"

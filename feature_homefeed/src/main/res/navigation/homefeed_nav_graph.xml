@@ -14,10 +14,11 @@
             app:destination="@id/messagesFragment" />
     </fragment>
 
+
     <fragment
         android:id="@+id/messagesFragment"
         android:name="com.nikolam.feature_messages.ui.MessagesFragment"
         android:label="fragment_messages"
-        app:moduleName="messages"/>
+        app:moduleName="@string/title_feature_messages"/>
 
 </navigation>

@@ -33,7 +33,8 @@ class HomeFeedFragment : Fragment() {
 //
     view.findViewById<Button>(R.id.messages_button).setOnClickListener {
 
-          val directions = HomeFeedFragmentDirections.actionHomeFeedFragmentToMessagesFragment()
+         val directions = HomeFeedFragmentDirections.actionHomeFeedFragmentToMessagesFragment()
+     //   val directions = HomeFeedFragmentDirections.actionHomeFeedFragmentToMessagesGraph()
            findNavController().navigate(directions)
 
         }

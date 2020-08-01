@@ -41,6 +41,9 @@ android {
 }
 
 dependencies {
+    api("androidx.legacy:legacy-support-v4:1.0.0")
+    api("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    api("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
     api(LibraryDependency.NAVIGATION_FRAGMENT_KTX)
     api(LibraryDependency.NAVIGATION_UI_KTX)
     implementation(LibraryDependency.PLAY_CORE)
@@ -51,9 +54,7 @@ dependencies {
     api(LibraryDependency.NAVIGATION_DYNAMIC_FEATURES)
     api(LibraryDependency.TIMBER)
 
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+
 
     implementation(project(":feature_homefeed"))
 }
