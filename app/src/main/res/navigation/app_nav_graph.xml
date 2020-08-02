@@ -6,4 +6,16 @@
 
     <include app:graph = "@navigation/homefeed_nav_graph"/>
 
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.nikolam.feature_explore.ExploreFragment"
+        android:label="fragment_explore"
+        app:moduleName="feature_explore" />
+
+    <include-dynamic
+        android:id="@+id/includedGraph"
+        app:graphPackage="com.nikolam.feature_explore"
+        app:graphResName="feature_explore_nav_graph"
+        app:moduleName="feature_explore" />
+
 </navigation>

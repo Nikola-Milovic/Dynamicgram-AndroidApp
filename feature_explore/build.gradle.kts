@@ -17,7 +17,7 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles("proguard-android.txt", "proguard-rules.pro")
+            proguardFiles("proguard-android.txt", "proguard-rules.pro", "proguard-rules-dynamic-features.pro")
         }
     }
 

@@ -20,7 +20,7 @@ kotlinDslPluginOptions {
 }
 
 object PluginsVersions {
-    const val GRADLE_ANDROID = "3.5.3"
+    const val GRADLE_ANDROID = "4.0.1"
     const val GRADLE_VERSIONS = "0.27.0"
     const val KOTLIN = "1.3.61"
     const val NAVIGATION = "2.1.0"
@@ -38,6 +38,7 @@ dependencies {
     implementation("com.github.ben-manes:gradle-versions-plugin:${PluginsVersions.GRADLE_VERSIONS}")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${PluginsVersions.KOTLIN}")
     implementation("org.jetbrains.kotlin:kotlin-allopen:${PluginsVersions.KOTLIN}")
+    implementation("org.jetbrains.kotlin:kotlin-android-extensions:${PluginsVersions.KOTLIN}")
     implementation("androidx.navigation:navigation-safe-args-gradle-plugin:${PluginsVersions.NAVIGATION}")
     implementation("com.vanniktech:gradle-android-junit-jacoco-plugin:${PluginsVersions.JACOCO}")
     implementation("com.vanniktech:gradle-dependency-graph-generator-plugin:${PluginsVersions.GRAPH_GENERATOR}")
