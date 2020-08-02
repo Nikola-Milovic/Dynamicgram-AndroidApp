@@ -8,4 +8,8 @@
         android:id="@+id/exploreFragment"
         android:title="@string/explore"
         android:icon="@drawable/ic_baseline_search_24"/>
+    <item
+        android:id="@+id/messagesFragment"
+        android:title="@string/title_feature_messages"
+        android:icon="@drawable/ic_baseline_chat_bubble_outline_24"/>
 </menu>

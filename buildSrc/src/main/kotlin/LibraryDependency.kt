@@ -13,8 +13,9 @@ private object LibraryVersion {
     const val CONSTRAINT_LAYOUT = "1.1.3"
     const val CORE_KTX = "1.1.0"
     const val FRAGMENT_KTX = "1.1.0"
-    const val LIFECYCLE = "1.1.1"
-    const val LIFECYCLE_VIEW_MODEL_KTX = "2.1.0"
+    const val LIFECYCLE = "2.2.0"
+    const val LIFECYCLE_VIEW_MODEL_KTX = "2.2.0"
+    const val ANDROID_LEGACY_SUPPORT = "1.0.0"
 }
 
 object LibraryDependency {
@@ -34,9 +35,13 @@ object LibraryDependency {
     const val COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${CoreVersion.COROUTINES_ANDROID}"
     const val CORE_KTX = "androidx.core:core-ktx:${LibraryVersion.CORE_KTX}"
     const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${LibraryVersion.FRAGMENT_KTX}"
-    const val LIFECYCLE_EXTENSIONS = "android.arch.lifecycle:extensions:${LibraryVersion.LIFECYCLE}"
+
+    //LifeCycle
+    const val LIFECYCLE_EXTENSIONS = "androidx.lifecycle:lifecycle-extensions:${LibraryVersion.LIFECYCLE}"
     const val LIFECYCLE_VIEW_MODEL_KTX =
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${LibraryVersion.LIFECYCLE_VIEW_MODEL_KTX}"
+    const val ANDROID_LEGACY_SUPPORT = "androidx.legacy:legacy-support-v4:${LibraryVersion.ANDROID_LEGACY_SUPPORT}"
+
     const val NAVIGATION_FRAGMENT_KTX = "androidx.navigation:navigation-fragment-ktx:${CoreVersion.NAVIGATION}"
     const val NAVIGATION_UI_KTX = "androidx.navigation:navigation-ui-ktx:${CoreVersion.NAVIGATION}"
     const val NAVIGATION_DYNAMIC_FEATURES = "androidx.navigation:navigation-dynamic-features-fragment:${CoreVersion.NAVIGATION}"

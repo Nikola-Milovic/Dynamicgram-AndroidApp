@@ -8,17 +8,6 @@
     <fragment
         android:id="@+id/homeFeedFragment"
         android:name="com.nikolam.feature_homefeed.ui.HomeFeedFragment"
-        android:label="HomeFeedFragment" >
-        <action
-            android:id="@+id/action_homeFeedFragment_to_messagesFragment"
-            app:destination="@id/messagesFragment" />
-    </fragment>
-
-
-    <fragment
-        android:id="@+id/messagesFragment"
-        android:name="com.nikolam.feature_messages.ui.MessagesFragment"
-        android:label="fragment_messages"
-        app:moduleName="feature_messages"/>
+        android:label="HomeFeedFragment" />
 
 </navigation>

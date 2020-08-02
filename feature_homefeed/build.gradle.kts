@@ -33,9 +33,9 @@ android {
 }
 
 dependencies {
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    implementation(LibraryDependency.LIFECYCLE_EXTENSIONS)
+    implementation(LibraryDependency.LIFECYCLE_VIEW_MODEL_KTX)
+    implementation(LibraryDependency.ANDROID_LEGACY_SUPPORT)
 
     api(LibraryDependency.NAVIGATION_FRAGMENT_KTX)
     api(LibraryDependency.NAVIGATION_UI_KTX)

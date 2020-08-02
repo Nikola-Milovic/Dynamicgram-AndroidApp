@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.dynamic-feature")
+    id(GradlePluginId.ANDROID_DYNAMIC_FEATURE)
     kotlin("android")
 }
 

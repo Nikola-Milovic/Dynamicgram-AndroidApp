@@ -30,14 +30,6 @@ class HomeFeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//
-    view.findViewById<Button>(R.id.messages_button).setOnClickListener {
-
-         val directions = HomeFeedFragmentDirections.actionHomeFeedFragmentToMessagesFragment()
-     //   val directions = HomeFeedFragmentDirections.actionHomeFeedFragmentToMessagesGraph()
-           findNavController().navigate(directions)
-
-        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

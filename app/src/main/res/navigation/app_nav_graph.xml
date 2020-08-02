@@ -12,10 +12,10 @@
         android:label="fragment_explore"
         app:moduleName="feature_explore" />
 
-    <include-dynamic
-        android:id="@+id/includedGraph"
-        app:graphPackage="com.nikolam.feature_explore"
-        app:graphResName="feature_explore_nav_graph"
-        app:moduleName="feature_explore" />
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.nikolam.feature_messages.ui.MessagesFragment"
+        android:label="fragment_messages"
+        app:moduleName="feature_messages" />
 
 </navigation>

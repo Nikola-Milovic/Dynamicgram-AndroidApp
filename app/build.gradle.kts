@@ -41,12 +41,15 @@ android {
 }
 
 dependencies {
-    api("androidx.legacy:legacy-support-v4:1.0.0")
-    api("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    api("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    implementation(LibraryDependency.PLAY_CORE)
+    implementation(project(":feature_homefeed"))
+
+    api(LibraryDependency.ANDROID_LEGACY_SUPPORT)
+    api(LibraryDependency.LIFECYCLE_EXTENSIONS)
+    api(LibraryDependency.LIFECYCLE_VIEW_MODEL_KTX)
+
     api(LibraryDependency.NAVIGATION_FRAGMENT_KTX)
     api(LibraryDependency.NAVIGATION_UI_KTX)
-    implementation(LibraryDependency.PLAY_CORE)
     api(LibraryDependency.RECYCLER_VIEW)
     api(LibraryDependency.MATERIAL)
     api(LibraryDependency.FRAGMENT_KTX)
@@ -56,7 +59,7 @@ dependencies {
 
 
 
-    implementation(project(":feature_homefeed"))
+
 }
 
 
