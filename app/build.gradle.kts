@@ -20,7 +20,6 @@ android {
         versionCode = AndroidConfig.VERSION_CODE
         versionName = AndroidConfig.VERSION_NAME
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
-
     }
     buildTypes {
         getByName("release") {
@@ -56,10 +55,6 @@ dependencies {
     api(LibraryDependency.SUPPORT_CONSTRAINT_LAYOUT)
     api(LibraryDependency.NAVIGATION_DYNAMIC_FEATURES)
     api(LibraryDependency.TIMBER)
-
-
-
-
 }
 
 
