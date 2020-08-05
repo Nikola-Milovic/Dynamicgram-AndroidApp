@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 // all projects = root project + sub projects
 allprojects {

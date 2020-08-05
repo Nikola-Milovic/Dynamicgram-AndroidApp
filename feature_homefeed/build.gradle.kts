@@ -3,6 +3,7 @@ plugins {
     id(GradlePluginId.KOTLIN_ANDROID)
     id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
     id(GradlePluginId.SAFE_ARGS)
+    id(GradlePluginId.KOTLIN_KAPT)
 }
 
 android {
@@ -30,6 +31,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -37,13 +43,32 @@ dependencies {
     implementation(LibraryDependency.LIFECYCLE_VIEW_MODEL_KTX)
     implementation(LibraryDependency.ANDROID_LEGACY_SUPPORT)
 
+    implementation(LibraryDependency.APP_COMPACT)
+
     api(LibraryDependency.NAVIGATION_FRAGMENT_KTX)
     api(LibraryDependency.NAVIGATION_UI_KTX)
     implementation(LibraryDependency.PLAY_CORE)
-    api(LibraryDependency.RECYCLER_VIEW)
+    implementation(LibraryDependency.RECYCLER_VIEW)
     api(LibraryDependency.MATERIAL)
     api(LibraryDependency.FRAGMENT_KTX)
     api(LibraryDependency.SUPPORT_CONSTRAINT_LAYOUT)
     api(LibraryDependency.NAVIGATION_DYNAMIC_FEATURES)
     api(LibraryDependency.TIMBER)
+
+    api(LibraryDependency.GLIDE)
+    kapt(LibraryDependency.GLIDE_AP)
+
+
+    //circular image view
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
+    //Dagger
+    api(LibraryDependency.DAGGER)
+    kapt(LibraryDependency.DAGGER_COMPILE)
+    api(LibraryDependency.DAGGER_ANDROID)
+    api(LibraryDependency.DAGGER_ANDROID_SUPPORT)
+    kapt(LibraryDependency.DAGGER_ANDROID_PROCESSOR)
+
+
+    addTestDependencies()
 }

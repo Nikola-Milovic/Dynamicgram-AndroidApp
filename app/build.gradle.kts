@@ -37,6 +37,10 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -49,12 +53,16 @@ dependencies {
 
     api(LibraryDependency.NAVIGATION_FRAGMENT_KTX)
     api(LibraryDependency.NAVIGATION_UI_KTX)
+    api(LibraryDependency.NAVIGATION_DYNAMIC_FEATURES)
+
     api(LibraryDependency.RECYCLER_VIEW)
     api(LibraryDependency.MATERIAL)
     api(LibraryDependency.FRAGMENT_KTX)
     api(LibraryDependency.SUPPORT_CONSTRAINT_LAYOUT)
-    api(LibraryDependency.NAVIGATION_DYNAMIC_FEATURES)
+
     api(LibraryDependency.TIMBER)
+
+    addTestDependencies()
 }
 
 

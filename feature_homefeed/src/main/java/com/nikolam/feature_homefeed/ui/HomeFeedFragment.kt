@@ -6,31 +6,58 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.ConcatAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.nikolam.feature_homefeed.R
-class HomeFeedFragment : Fragment() {
+import com.nikolam.feature_homefeed.base.DatabindingFragment
+import com.nikolam.feature_homefeed.databinding.HomeFeedFragmentBinding
+import com.nikolam.feature_homefeed.ui.adapters.HeaderAdapter
+import com.nikolam.feature_homefeed.ui.adapters.PostAdapter
 
-    companion object {
-        fun newInstance() = HomeFeedFragment()
-    }
+class HomeFeedFragment : DatabindingFragment() {
 
-    private lateinit var viewModel: HomeFeedViewModel
+    private lateinit var feedViewModel: HomeFeedViewModel
+
+    lateinit var binding : HomeFeedFragmentBinding
+
+    lateinit var postAdapter: PostAdapter
+    lateinit var headerAdapter: HeaderAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.home_feed_fragment, container, false)
+        feedViewModel =
+            ViewModelProviders.of(this).get(HomeFeedViewModel::class.java)
+
+        observeData()
+
+        return binding<HomeFeedFragmentBinding>(inflater, R.layout.home_feed_fragment, container).apply {
+
+            val layoutMana=
+                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+            postAdapter = PostAdapter()
+            headerAdapter = HeaderAdapter(requireContext(), feedViewModel.stories)
+            val concatAdapter= ConcatAdapter(headerAdapter, postAdapter)
+            recyclerViews.apply{
+                layoutManager = layoutMana
+            }
+            this.concatAdapter = concatAdapter
+            viewModel = feedViewModel
+            lifecycleOwner = this@HomeFeedFragment
+
+        }.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(HomeFeedViewModel::class.java)
-        // TODO: Use the ViewModel
+    private fun observeData(){
+        feedViewModel._postListLiveData.observe(viewLifecycleOwner, Observer {
+            postAdapter.addPostList(it)
+        })
     }
 
 }
