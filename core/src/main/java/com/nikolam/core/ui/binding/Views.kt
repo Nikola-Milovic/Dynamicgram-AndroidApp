@@ -1,4 +1,4 @@
-package com.example.storiesandposts.ui.binding
+package com.nikolam.core.ui.binding
 
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter

@@ -1,4 +1,4 @@
-package com.nikolam.feature_homefeed.ui.binding
+package com.nikolam.core.ui.binding
 
 
 import androidx.databinding.BindingAdapter

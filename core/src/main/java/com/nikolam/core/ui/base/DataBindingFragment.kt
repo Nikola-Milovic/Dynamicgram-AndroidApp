@@ -1,4 +1,4 @@
-package com.nikolam.feature_homefeed.base
+package com.nikolam.core.ui.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

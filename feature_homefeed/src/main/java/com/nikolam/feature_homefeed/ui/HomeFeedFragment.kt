@@ -2,7 +2,6 @@ package com.nikolam.feature_homefeed.ui
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nikolam.feature_homefeed.R
-import com.nikolam.feature_homefeed.base.DatabindingFragment
+import com.nikolam.core.ui.base.DatabindingFragment
 import com.nikolam.feature_homefeed.databinding.HomeFeedFragmentBinding
 import com.nikolam.feature_homefeed.ui.adapters.HeaderAdapter
 import com.nikolam.feature_homefeed.ui.adapters.PostAdapter
