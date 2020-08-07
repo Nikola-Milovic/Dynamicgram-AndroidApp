@@ -15,7 +15,13 @@ allprojects {
     plugins.apply(GradlePluginId.KTLINT)
     plugins.apply(GradlePluginId.SPOTLESS)
     plugins.apply(GradlePluginId.GRADLE_VERSION_PLUGIN)
+
+
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> { kotlinOptions.jvmTarget = "1.8" }
 }
+
+
+
 //buildscript {
 //    val kotlin_version by extra("1.3.72")
 //    dependencies {

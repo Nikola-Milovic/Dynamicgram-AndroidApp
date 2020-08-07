@@ -31,6 +31,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
     buildFeatures {
         dataBinding = true
     }
@@ -38,6 +42,10 @@ android {
 }
 dependencies {
     api(LibraryDependency.TIMBER)
+
+    api(LibraryDependency.ANDROID_LEGACY_SUPPORT)
+    api(LibraryDependency.LIFECYCLE_EXTENSIONS)
+    api(LibraryDependency.LIFECYCLE_VIEW_MODEL_KTX)
 
     //Dagger
     api(LibraryDependency.DAGGER)
