@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nikolam.feature_homefeed.R
@@ -15,7 +13,7 @@ import com.nikolam.core.ui.base.DatabindingFragment
 import com.nikolam.core.ui.extensions.coreComponent
 import com.nikolam.feature_homefeed.databinding.HomeFeedFragmentBinding
 import com.nikolam.feature_homefeed.di.DaggerHomeFeedComponent
-import com.nikolam.feature_homefeed.di.HomeFeedFragmentModule
+import com.nikolam.feature_homefeed.di.HomeFeedModule
 import com.nikolam.feature_homefeed.ui.adapters.HeaderAdapter
 import com.nikolam.feature_homefeed.ui.adapters.PostAdapter
 import javax.inject.Inject
@@ -43,7 +41,7 @@ class HomeFeedFragment : DatabindingFragment() {
         DaggerHomeFeedComponent
             .builder()
             .coreComponent(coreComponent())
-            .homeFeedFragmentModule(HomeFeedFragmentModule(this))
+            .homeFeedModule(HomeFeedModule(this))
             .build()
             .inject(this)
 
