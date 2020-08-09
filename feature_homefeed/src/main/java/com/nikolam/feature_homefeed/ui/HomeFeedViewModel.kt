@@ -9,7 +9,7 @@ import com.nikolam.feature_homefeed.data.model.Post
 import com.nikolam.feature_homefeed.data.model.Story
 import javax.inject.Inject
 
-class HomeFeedViewModel @Inject constructor(private val homeFeedRepository: ImplHomeFeedRepository): ViewModel() {
+class HomeFeedViewModel @Inject constructor(private val homeFeedRepository: IhomeFeedRepository): ViewModel() {
     val postListLiveData : MutableLiveData<ArrayList<Post>> = MutableLiveData()
     val _postListLiveData : LiveData<ArrayList<Post>>
         get() = postListLiveData

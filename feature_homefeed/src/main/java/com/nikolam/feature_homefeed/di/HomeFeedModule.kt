@@ -2,32 +2,35 @@ package com.nikolam.feature_homefeed.di
 
 
 
-import com.nikolam.core.di.scope.HomeFeedScope
+import com.nikolam.core.di.scope.FragmentScope
 import com.nikolam.core.di.ui.getViewModel
+import com.nikolam.feature_homefeed.data.IhomeFeedRepository
 import com.nikolam.feature_homefeed.data.ImplHomeFeedRepository
+import com.nikolam.feature_homefeed.data.network.INetworkDataSource
 import com.nikolam.feature_homefeed.data.network.NetworkDataSource
 import com.nikolam.feature_homefeed.ui.HomeFeedFragment
 import com.nikolam.feature_homefeed.ui.HomeFeedViewModel
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
+
 
 @Module()
 class HomeFeedModule(private val fragment : HomeFeedFragment){
 
+    @FragmentScope
     @Provides
-    @HomeFeedScope
-    fun provideNetworkDataSource() : NetworkDataSource = NetworkDataSource()
+    fun provideNetworkDataSource() : INetworkDataSource = NetworkDataSource()
 
+    @FragmentScope
     @Provides
-    fun homeFeedViewModel(homeFeedRepository: ImplHomeFeedRepository): HomeFeedViewModel =
+    fun homeFeedViewModel(homeFeedRepository: IhomeFeedRepository): HomeFeedViewModel =
         fragment.getViewModel {
             HomeFeedViewModel(homeFeedRepository)
         }
 
+    @FragmentScope
     @Provides
-    @HomeFeedScope
-    fun providesHomeFeedRepository(networkDataSource: NetworkDataSource) : ImplHomeFeedRepository {
+    fun providesHomeFeedRepository(networkDataSource: INetworkDataSource) : IhomeFeedRepository {
         return ImplHomeFeedRepository(networkDataSource)
     }
 
