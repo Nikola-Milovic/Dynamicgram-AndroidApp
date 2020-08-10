@@ -5,6 +5,7 @@ plugins {
     id(GradlePluginId.ANDROID_APPLICATION)
     id(GradlePluginId.KOTLIN_ANDROID)
     id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
+    id(GradlePluginId.KOTLIN_KAPT)
     id(GradlePluginId.SAFE_ARGS)
 }
 
@@ -46,6 +47,7 @@ android {
 dependencies {
     implementation(LibraryDependency.PLAY_CORE)
     implementation(project(":feature_homefeed"))
+    implementation(project(":core"))
 
     api(LibraryDependency.ANDROID_LEGACY_SUPPORT)
     api(LibraryDependency.LIFECYCLE_EXTENSIONS)
@@ -61,6 +63,13 @@ dependencies {
     api(LibraryDependency.SUPPORT_CONSTRAINT_LAYOUT)
 
     api(LibraryDependency.TIMBER)
+
+    //Dagger
+    api(LibraryDependency.DAGGER)
+    kapt(LibraryDependency.DAGGER_COMPILE)
+    api(LibraryDependency.DAGGER_ANDROID)
+    api(LibraryDependency.DAGGER_ANDROID_SUPPORT)
+    kapt(LibraryDependency.DAGGER_ANDROID_PROCESSOR)
 
     addTestDependencies()
 }

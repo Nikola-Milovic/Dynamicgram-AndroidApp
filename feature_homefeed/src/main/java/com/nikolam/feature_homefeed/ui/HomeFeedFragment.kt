@@ -1,8 +1,7 @@
 package com.nikolam.feature_homefeed.ui
 
-import androidx.lifecycle.ViewModelProviders
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,19 +9,42 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nikolam.feature_homefeed.R
-import com.nikolam.feature_homefeed.base.DatabindingFragment
+import com.nikolam.core.ui.base.DatabindingFragment
+import com.nikolam.core.ui.extensions.coreComponent
 import com.nikolam.feature_homefeed.databinding.HomeFeedFragmentBinding
+import com.nikolam.feature_homefeed.di.DaggerHomeFeedComponent
+import com.nikolam.feature_homefeed.di.HomeFeedModule
 import com.nikolam.feature_homefeed.ui.adapters.HeaderAdapter
 import com.nikolam.feature_homefeed.ui.adapters.PostAdapter
+import javax.inject.Inject
 
 class HomeFeedFragment : DatabindingFragment() {
 
-    private lateinit var feedViewModel: HomeFeedViewModel
+   // private lateinit var feedViewModel: HomeFeedViewModel
+
+
+    @Inject
+    lateinit var homefeedViewModel: HomeFeedViewModel
 
     lateinit var binding : HomeFeedFragmentBinding
 
     lateinit var postAdapter: PostAdapter
     lateinit var headerAdapter: HeaderAdapter
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        initDependencyInjection()
+    }
+
+    private fun initDependencyInjection() =
+        DaggerHomeFeedComponent
+            .builder()
+            .coreComponent(coreComponent())
+            .homeFeedModule(HomeFeedModule(this))
+            .build()
+            .inject(this)
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,8 +52,8 @@ class HomeFeedFragment : DatabindingFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        feedViewModel =
-            ViewModelProviders.of(this).get(HomeFeedViewModel::class.java)
+//        feedViewModel = ViewModelProviders.of(this, modelFactory)[HomeFeedViewModel::class.java]
+//           // ViewModelProviders.of(this).get(HomeFeedViewModel::class.java)
 
         observeData()
 
@@ -41,13 +63,13 @@ class HomeFeedFragment : DatabindingFragment() {
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
             postAdapter = PostAdapter()
-            headerAdapter = HeaderAdapter(requireContext(), feedViewModel.stories)
+            headerAdapter = HeaderAdapter(requireContext(), homefeedViewModel.stories)
             val concatAdapter= ConcatAdapter(headerAdapter, postAdapter)
             recyclerViews.apply{
                 layoutManager = layoutMana
             }
             this.concatAdapter = concatAdapter
-            viewModel = feedViewModel
+            viewModel = viewModel
             lifecycleOwner = this@HomeFeedFragment
 
         }.root
@@ -55,7 +77,7 @@ class HomeFeedFragment : DatabindingFragment() {
 
 
     private fun observeData(){
-        feedViewModel._postListLiveData.observe(viewLifecycleOwner, Observer {
+        homefeedViewModel._postListLiveData.observe(viewLifecycleOwner, Observer {
             postAdapter.addPostList(it)
         })
     }

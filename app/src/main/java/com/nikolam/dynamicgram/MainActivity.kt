@@ -11,12 +11,16 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.nikolam.core.ui.extensions.coreComponent
+import com.nikolam.dynamicgram.di.DaggerMainActivityComponent
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
     val layoutResId = R.layout.activity_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        initDependencyInjection()
+
         super.onCreate(savedInstanceState)
 
         setContentView(layoutResId)
@@ -32,6 +36,13 @@ class MainActivity : AppCompatActivity() {
         setupBottomNavigation()
 
     }
+
+    private fun initDependencyInjection() =
+        DaggerMainActivityComponent
+            .builder()
+            .coreComponent(coreComponent())
+            .build()
+            .inject(this)
 
     private fun setupBottomNavigation() {
         val navController = findViewById<View>(R.id.nav_host_fragment).findNavController()

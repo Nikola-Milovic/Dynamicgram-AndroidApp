@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nikolam.feature_homefeed.data.model.Story
-import com.nikolam.feature_homefeed.ui.utils.bindings
+import com.nikolam.core.ui.utils.bindings
 import com.nikolam.feature_homefeed.R
 import com.nikolam.feature_homefeed.databinding.ItemStoryBinding
 
