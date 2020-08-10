@@ -21,32 +21,7 @@ class HomeFeedViewModel @Inject constructor(private val homeFeedRepository: Ihom
 
     lateinit var stories : ArrayList<Story>
 
-    init {
-        makeAList()
-    }
-
-
-    fun makeAList(){ //used for testing as we don't have the data layer
-
-//        for (i in 1..5){
-//            val post = Post(
-//                "John $i",
-//                "https://homepages.cae.wisc.edu/~ece533/images/cat.png",
-//                "Baboons are great",
-//                "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
-//                10,
-//                2
-//            )
-//            list.add(post)
-//        }
-//
-//        val list2 = ArrayList<Story>()
-//        for (i in 1..15){
-//            val story = Story(
-//                "https://homepages.cae.wisc.edu/~ece533/images/cat.png")
-//
-//            list2.add(story)
-//        }
+    fun makeAList(){
         val list = homeFeedRepository.fetchPosts()
         val list2 = homeFeedRepository.fetchStories()
 
@@ -54,7 +29,5 @@ class HomeFeedViewModel @Inject constructor(private val homeFeedRepository: Ihom
         storyListLiveData.value = list2
 
         stories = list2
-
-        //Log.d("TAG", list.toString())
     }
 }

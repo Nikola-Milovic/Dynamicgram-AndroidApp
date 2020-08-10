@@ -18,6 +18,8 @@ fun DependencyHandler.addTestDependencies() {
     testImplementation(TestLibraryDependency.ANDROID_X_CORE_TESTING)
 
     kaptTest(LibraryDependency.DAGGER_COMPILE)
+    kaptAndroidTest(LibraryDependency.DAGGER_COMPILE)
+    kaptAndroidTest(LibraryDependency.DAGGER_ANDROID_PROCESSOR)
 }
 
 /*
@@ -37,6 +39,10 @@ private fun DependencyHandler.api(dependencyNotation: Any): Dependency? =
 @Suppress("detekt.UnusedPrivateMember")
 private fun DependencyHandler.kapt(dependencyNotation: Any): Dependency? =
     add("kapt", dependencyNotation)
+
+@Suppress("detekt.UnusedPrivateMember")
+private fun DependencyHandler.kaptAndroidTest(dependencyNotation: Any): Dependency? =
+    add("kaptAndroidTest", dependencyNotation)
 
 @Suppress("detekt.UnusedPrivateMember")
 private fun DependencyHandler.kaptTest(dependencyNotation: Any): Dependency? =

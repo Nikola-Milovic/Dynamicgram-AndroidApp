@@ -39,6 +39,12 @@ android {
     buildFeatures {
         dataBinding = true
     }
+
+    testOptions {
+      unitTests(delegateClosureOf<com.android.build.gradle.internal.dsl.TestOptions.UnitTestOptions> {
+          this.setReturnDefaultValues(true)
+      })
+    }
 }
 
 dependencies {
