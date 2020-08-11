@@ -37,7 +37,7 @@ private fun DependencyHandler.api(dependencyNotation: Any): Dependency? =
     add("api", dependencyNotation)
 
 @Suppress("detekt.UnusedPrivateMember")
-private fun DependencyHandler.kapt(dependencyNotation: Any): Dependency? =
+fun DependencyHandler.kapt(dependencyNotation: Any): Dependency? =
     add("kapt", dependencyNotation)
 
 @Suppress("detekt.UnusedPrivateMember")
