@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/exploreFragment"
-        android:name="com.nikolam.feature_explore.ExploreFragment"
+        android:name="com.nikolam.feature_explore.ui.ExploreFragment"
         android:label="ExploreFragment" />
 </navigation>

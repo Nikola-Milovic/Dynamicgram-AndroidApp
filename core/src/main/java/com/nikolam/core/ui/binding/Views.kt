@@ -6,7 +6,7 @@ import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 
 @BindingAdapter("loadImage")
-fun AppCompatImageView.bindLoadImage(url: String?) {
+fun AppCompatImageView.bindLoadImageImageView(url: String?) {
     url?.let {
         Glide.with(context)
             .load(it)

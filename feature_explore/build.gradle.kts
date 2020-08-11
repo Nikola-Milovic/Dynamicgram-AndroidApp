@@ -13,7 +13,6 @@ android {
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
     }
 
-
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -29,8 +28,13 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+    dataBinding {
+        isEnabled = true
+    }
 }
 
 dependencies {
     implementation(project(":app"))
+    implementation(project(":core"))
 }
