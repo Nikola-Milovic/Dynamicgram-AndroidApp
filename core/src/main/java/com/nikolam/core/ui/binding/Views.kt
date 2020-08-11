@@ -15,7 +15,7 @@ fun AppCompatImageView.bindLoadImageImageView(url: String?) {
 }
 
 @BindingAdapter("loadImageCircular")
-fun CircleImageView.bindLoadImage(url : String?){
+fun CircleImageView.bindLoadImage(url: String?) {
     url?.let {
         Glide.with(context)
             .load(it)

@@ -7,7 +7,5 @@ import com.nikolam.core.di.CoreComponentProvider
 class TestDynamicgramApplication : SplitCompatApplication(), CoreComponentProvider {
     lateinit var coreComponent: CoreComponent
 
-
-
     override fun provideCoreComponent(): CoreComponent = coreComponent
 }

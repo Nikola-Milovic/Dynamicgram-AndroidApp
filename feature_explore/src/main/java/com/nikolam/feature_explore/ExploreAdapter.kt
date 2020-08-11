@@ -1,19 +1,18 @@
 package com.nikolam.feature_explore
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.nikolam.feature_explore.data.model.Post
 import com.nikolam.core.ui.utils.bindings
+import com.nikolam.feature_explore.data.model.Post
 import com.nikolam.feature_explore.databinding.ExplorePostItemBinding
 import timber.log.Timber
 
 class ExploreAdapter() :
     RecyclerView.Adapter<ExploreAdapter.PostViewHolder>() {
 
-    private var posts : ArrayList<Post> = arrayListOf()
+    private var posts: ArrayList<Post> = arrayListOf()
 
     // Create new views (invoked by the layout manager)
     override fun onCreateViewHolder(
@@ -36,18 +35,17 @@ class ExploreAdapter() :
         }
     }
 
-    fun addPostList(_posts : ArrayList<Post>) {
+    fun addPostList(_posts: ArrayList<Post>) {
         posts.clear()
         posts.addAll(_posts)
         Timber.d("got data")
         this.notifyDataSetChanged()
     }
 
-    override fun getItemCount() : Int {
+    override fun getItemCount(): Int {
         Timber.d(posts.size.toString())
         return posts.size
     }
-
 
     inner class PostViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
@@ -67,7 +65,5 @@ class ExploreAdapter() :
                 executePendingBindings()
             }
         }
-
     }
-
 }

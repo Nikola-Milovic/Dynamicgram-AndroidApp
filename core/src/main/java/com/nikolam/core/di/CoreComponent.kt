@@ -17,5 +17,4 @@ interface CoreComponent {
      */
 
     fun context(): Context
-
 }

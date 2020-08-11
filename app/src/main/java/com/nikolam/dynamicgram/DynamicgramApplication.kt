@@ -7,7 +7,7 @@ import com.nikolam.core.di.CoreComponentProvider
 import com.nikolam.core.di.DaggerCoreComponent
 import timber.log.Timber
 
-class DynamicgramApplication  : SplitCompatApplication(), CoreComponentProvider {
+class DynamicgramApplication : SplitCompatApplication(), CoreComponentProvider {
 
     lateinit var coreComponent: CoreComponent
 

@@ -11,9 +11,12 @@ jobs:
       - checkout
       - restore_cache:
           key: gradle-{{ checksum "build.gradle.kts" }}
+#      - run:
+#          name: Run Ktlint
+#          command: ./gradlew ktlint
       - run:
-          name: Run Ktlint
-          command: ./gradlew ktlint test
+          name: Run Tests
+          command: ./gradlew lint test
       - run:
           name: Run Lint
           command: ./gradlew lintDevDebug

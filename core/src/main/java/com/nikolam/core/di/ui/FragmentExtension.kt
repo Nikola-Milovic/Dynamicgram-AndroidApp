@@ -8,7 +8,10 @@ import androidx.lifecycle.ViewModelProviders
 /**
  * Helper method for easing the use of ViewModels with a constructor.
  */
-inline fun <reified V : ViewModel> Fragment.getViewModel(key: String? = null, noinline factory: () -> V): V {
+inline fun <reified V : ViewModel> Fragment.getViewModel(
+    key: String? = null,
+    noinline factory: () -> V
+): V {
     @Suppress("UNCHECKED_CAST")
     val viewModelProviderFactory = object : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T = factory() as T

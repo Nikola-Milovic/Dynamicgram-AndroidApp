@@ -1,12 +1,9 @@
 package com.nikolam.dynamicgram
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
 import android.view.View
 import android.view.WindowManager
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -34,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         Timber.v("onCreate ${javaClass.simpleName}")
 
         setupBottomNavigation()
-
     }
 
     private fun initDependencyInjection() =

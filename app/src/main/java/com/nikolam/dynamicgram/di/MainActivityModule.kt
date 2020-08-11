@@ -12,5 +12,6 @@ class MainActivityModule {
 
     @Provides
     @Reusable
-    fun splitInstallManager(context: Context): SplitInstallManager = SplitInstallManagerFactory.create(context)
+    fun splitInstallManager(context: Context): SplitInstallManager =
+        SplitInstallManagerFactory.create(context)
 }
