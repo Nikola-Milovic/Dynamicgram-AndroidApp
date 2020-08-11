@@ -18,9 +18,6 @@ jobs:
           name: Run Tests
           command: ./gradlew lint test
       - run:
-          name: Run Lint
-          command: ./gradlew lintDevDebug
-      - run:
           name: Run Spotless
           command: ./gradlew spotlessKotlinCheck
       - run:
