@@ -1,4 +1,4 @@
-package com.nikolam.feature_explore
+package com.nikolam.feature_explore.ui
 
 import androidx.lifecycle.ViewModel
 

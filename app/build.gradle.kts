@@ -42,6 +42,8 @@ android {
     buildFeatures {
         dataBinding = true
     }
+
+
 }
 
 dependencies {
@@ -70,6 +72,10 @@ dependencies {
     api(LibraryDependency.DAGGER_ANDROID)
     api(LibraryDependency.DAGGER_ANDROID_SUPPORT)
     kapt(LibraryDependency.DAGGER_ANDROID_PROCESSOR)
+
+
+    //circular image view
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
     addTestDependencies()
 }

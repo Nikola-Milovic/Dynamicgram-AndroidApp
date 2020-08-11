@@ -16,6 +16,10 @@ fun DependencyHandler.addTestDependencies() {
     testImplementation(TestLibraryDependency.MOCKITO_KOTLIN)
     testImplementation(TestLibraryDependency.COROUTINES_TEST)
     testImplementation(TestLibraryDependency.ANDROID_X_CORE_TESTING)
+
+    kaptTest(LibraryDependency.DAGGER_COMPILE)
+    kaptAndroidTest(LibraryDependency.DAGGER_COMPILE)
+    kaptAndroidTest(LibraryDependency.DAGGER_ANDROID_PROCESSOR)
 }
 
 /*
@@ -35,6 +39,14 @@ private fun DependencyHandler.api(dependencyNotation: Any): Dependency? =
 @Suppress("detekt.UnusedPrivateMember")
 private fun DependencyHandler.kapt(dependencyNotation: Any): Dependency? =
     add("kapt", dependencyNotation)
+
+@Suppress("detekt.UnusedPrivateMember")
+private fun DependencyHandler.kaptAndroidTest(dependencyNotation: Any): Dependency? =
+    add("kaptAndroidTest", dependencyNotation)
+
+@Suppress("detekt.UnusedPrivateMember")
+private fun DependencyHandler.kaptTest(dependencyNotation: Any): Dependency? =
+    add("kaptTest", dependencyNotation)
 
 private fun DependencyHandler.testImplementation(dependencyNotation: Any): Dependency? =
     add("testImplementation", dependencyNotation)

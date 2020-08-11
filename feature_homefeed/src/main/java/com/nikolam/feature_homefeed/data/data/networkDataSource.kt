@@ -1,12 +1,12 @@
-package com.nikolam.feature_homefeed.data.network
+package com.nikolam.feature_homefeed.data.data
 
 import com.nikolam.feature_homefeed.data.model.Post
 import com.nikolam.feature_homefeed.data.model.Story
 
-class NetworkDataSource{
+open class NetworkDataSource : INetworkDataSource {
     // Here we mock a networking call to some remote API to fetch stories and posts
 
-    fun fetchStories() : ArrayList<Story> {
+    override fun fetchStories() : ArrayList<Story> {
         val list = ArrayList<Story>()
         for (i in 1..15){
             val story = Story(
@@ -18,7 +18,7 @@ class NetworkDataSource{
     }
 
 
-    fun fetchPosts() : ArrayList<Post> {
+    override fun fetchPosts() : ArrayList<Post> {
         val list = ArrayList<Post>()
 
         for (i in 1..5){
