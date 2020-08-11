@@ -34,4 +34,5 @@ android {
 
 dependencies {
     implementation(project(":app"))
+    testImplementation(TestLibraryDependency.JUNIT)
 }

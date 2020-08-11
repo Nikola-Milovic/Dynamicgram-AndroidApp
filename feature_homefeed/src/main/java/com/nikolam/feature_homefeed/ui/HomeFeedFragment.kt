@@ -77,6 +77,7 @@ class HomeFeedFragment : DatabindingFragment() {
 
 
     private fun observeData(){
+        homefeedViewModel.makeAList()
         homefeedViewModel._postListLiveData.observe(viewLifecycleOwner, Observer {
             postAdapter.addPostList(it)
         })
