@@ -20,10 +20,6 @@ class HomeFeedViewModel @Inject constructor(private val homeFeedRepository: Ihom
         get() = storyListLiveData
 
 
-    init {
-        makeAList()
-    }
-
     lateinit var stories : ArrayList<Story>
 
     fun makeAList(){

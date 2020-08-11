@@ -74,8 +74,6 @@ dependencies {
     kapt(LibraryDependency.DAGGER_ANDROID_PROCESSOR)
 
 
-    //circular image view
-    implementation("de.hdodenhof:circleimageview:3.1.0")
 
     addTestDependencies()
 }
