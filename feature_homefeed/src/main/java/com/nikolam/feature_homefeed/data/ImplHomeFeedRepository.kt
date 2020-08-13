@@ -2,7 +2,7 @@ package com.nikolam.feature_homefeed.data
 
 import com.nikolam.feature_homefeed.data.model.Post
 import com.nikolam.feature_homefeed.data.model.Story
-import com.nikolam.feature_homefeed.data.data.INetworkDataSource
+import com.nikolam.feature_homefeed.data.network.INetworkDataSource
 import javax.inject.Inject
 
 class ImplHomeFeedRepository @Inject constructor(private val networkDataSource : INetworkDataSource) : IhomeFeedRepository{

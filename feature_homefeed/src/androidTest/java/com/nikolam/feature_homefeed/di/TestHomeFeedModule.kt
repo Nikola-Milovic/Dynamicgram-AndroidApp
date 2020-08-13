@@ -4,7 +4,7 @@ import com.nikolam.core.di.scope.FragmentScope
 import com.nikolam.core.di.ui.getViewModel
 import com.nikolam.feature_homefeed.data.IhomeFeedRepository
 import com.nikolam.feature_homefeed.data.ImplHomeFeedRepository
-import com.nikolam.feature_homefeed.data.data.INetworkDataSource
+import com.nikolam.feature_homefeed.data.network.INetworkDataSource
 import com.nikolam.feature_homefeed.di.data.FakeNetworkDataSource
 import com.nikolam.feature_homefeed.ui.HomeFeedFragment
 import com.nikolam.feature_homefeed.ui.HomeFeedViewModel
