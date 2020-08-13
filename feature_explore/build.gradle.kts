@@ -1,6 +1,7 @@
 plugins {
     id(GradlePluginId.ANDROID_DYNAMIC_FEATURE)
     kotlin("android")
+    id(GradlePluginId.KOTLIN_KAPT)
 }
 
 android {
@@ -38,4 +39,11 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":app"))
     testImplementation(TestLibraryDependency.JUNIT)
+
+    //Dagger
+    api(LibraryDependency.DAGGER)
+    kapt(LibraryDependency.DAGGER_COMPILE)
+    api(LibraryDependency.DAGGER_ANDROID)
+    api(LibraryDependency.DAGGER_ANDROID_SUPPORT)
+    kapt(LibraryDependency.DAGGER_ANDROID_PROCESSOR)
 }

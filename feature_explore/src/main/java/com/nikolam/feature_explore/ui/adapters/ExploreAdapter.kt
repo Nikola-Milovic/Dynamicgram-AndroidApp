@@ -1,10 +1,11 @@
-package com.nikolam.feature_explore
+package com.nikolam.feature_explore.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nikolam.core.ui.utils.bindings
+import com.nikolam.feature_explore.R
 import com.nikolam.feature_explore.data.model.Post
 import com.nikolam.feature_explore.databinding.ExplorePostItemBinding
 import timber.log.Timber

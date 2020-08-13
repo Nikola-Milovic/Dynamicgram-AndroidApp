@@ -1,4 +1,4 @@
-package com.nikolam.feature_homefeed.di
+package com.nikolam.feature_explore.di
 
 import com.nikolam.core.di.CoreComponent
 import com.nikolam.core.di.scope.FragmentScope
