@@ -1,4 +1,4 @@
-package com.nikolam.feature_homefeed.data.data
+package com.nikolam.feature_homefeed.data.network
 
 import com.nikolam.feature_homefeed.data.model.Post
 import com.nikolam.feature_homefeed.data.model.Story

@@ -1,7 +1,7 @@
 package com.nikolam.feature_homefeed.di.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.nikolam.feature_homefeed.data.data.FakeHomeFeedRepsitory
+import com.nikolam.feature_homefeed.data.network.FakeHomeFeedRepsitory
 import com.nikolam.feature_homefeed.data.model.fakePosts
 import com.nikolam.feature_homefeed.data.model.fakeStories
 import com.nikolam.feature_homefeed.data.util.getOrAwaitValue

@@ -33,13 +33,15 @@ class ExploreFragment : DatabindingFragment() {
         return binding<ExploreFragmentBinding>(inflater, layout.explore_fragment, container).apply {
 
             val layoutMana =
-                GridLayoutManager(context, 4)
+                GridLayoutManager(context, 3)
 
             adapter = ExploreAdapter()
 
             gridExploreRecycleView.apply {
                 layoutManager = layoutMana
+                //setHasFixedSize(true)
             }
+
             this.exploreAdapter = adapter
             viewModel = viewModel
             lifecycleOwner = this@ExploreFragment
