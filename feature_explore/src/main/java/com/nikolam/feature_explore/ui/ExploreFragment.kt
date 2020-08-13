@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.nikolam.core.ui.base.DatabindingFragment
@@ -54,22 +55,16 @@ class ExploreFragment : DatabindingFragment() {
             viewModel = viewModel
             lifecycleOwner = this@ExploreFragment
 
-            adapter.addPostList(arrayListOf(Post("https://homepages.cae.wisc.edu/~ece533/images/cat.png"), Post("https://homepages.cae.wisc.edu/~ece533/images/cat.png"),
-                Post("https://homepages.cae.wisc.edu/~ece533/images/cat.png"), Post("https://homepages.cae.wisc.edu/~ece533/images/cat.png"),
-                Post("https://homepages.cae.wisc.edu/~ece533/images/cat.png")))
+//            adapter.addPostList(arrayListOf(Post("https://homepages.cae.wisc.edu/~ece533/images/cat.png"), Post("https://homepages.cae.wisc.edu/~ece533/images/cat.png"),
+//                Post("https://homepages.cae.wisc.edu/~ece533/images/cat.png"), Post("https://homepages.cae.wisc.edu/~ece533/images/cat.png"),
+//                Post("https://homepages.cae.wisc.edu/~ece533/images/cat.png")))
         }.root
     }
 
     private fun observeData() {
-//        viewModel..observe(viewLifecycleOwner, Observer {
-//            postAdapter.addPostList(it)
-//        })
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(ExploreViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel.postListLiveData.observe(viewLifecycleOwner, Observer {
+            adapter.addPostList(it)
+        })
     }
 
 
